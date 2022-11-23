@@ -37,6 +37,6 @@ app.use("/*", (req, res, next) => {
 });
 
 app.use(globalErrHandler);
-app.listen(PORT || process.env.PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log("Server start on port " + PORT);
 })
