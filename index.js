@@ -19,8 +19,8 @@ mongoose.connect(process.env.DATABASE)
 // import listingRoutes from "./routes/listing.routes.js"
 
 
-import userRoutes from "./routes/user.routes.js"
-import productRoutes from "./routes/product.routes.js"
+// import userRoutes from "./routes/user.routes.js"
+
 const corsOptions = {
 
     origin: "http://localhost:3000",
@@ -28,9 +28,9 @@ const corsOptions = {
 
 }
 app.use(cors())
-app.use("/api/user", userRoutes)
-app.use("/api/product", productRoutes)
-// app.use("/api/listings", listingRoutes)
+// app.use("/api/user", userRoutes)
+
+
 app.use("/*", (req, res, next) => {
     const err = new AppError(404, "fail", "undefined route");
     next(err, req, res, next);
